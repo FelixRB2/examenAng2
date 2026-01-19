@@ -1,0 +1,61 @@
+<section class="bg-dark vh-100 d-flex align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0">
+          <div class="card-body p-4">
+            
+            <h3 class="text-center text-primary mb-3">Iniciar sesión</h3>
+            <p class="text-center text-muted mb-4">
+              Accede con tus credenciales
+            </p>
+
+            <form #loginForm="ngForm" (ngSubmit)="getUser(loginForm)">
+              
+              <div class="mb-3">
+                <label for="username" class="form-label fw-semibold">username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  name="username"
+                  placeholder="Introduce tu username"
+                  ngModel
+                  required
+                >
+              </div>
+
+              <div class="mb-4">
+                <label for="password" class="form-label fw-semibold">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="Introduce tu contraseña"
+                  ngModel
+                  required
+                >
+              </div>
+
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">
+                  Entrar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary"
+                  [routerLink]="['/']"
+                >
+                  Volver
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

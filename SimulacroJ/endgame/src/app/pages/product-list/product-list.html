@@ -1,0 +1,40 @@
+<div class="container fluid px-3">
+  <div class="row g-3 md-4 my-3">
+    @for(product of productsArray; track product.id){
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-3 d-flex">
+        <app-product-card [product]="product" (deleted)="onProductDeleted(product.id)"></app-product-card>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Controles de paginación -->
+<div class="row my-3">
+  <div class="col-12">
+    <nav aria-label="Paginación de productos">
+      <ul class="pagination pagination-lg justify-content-center flex-wrap gap-1">
+
+        <!-- Ir a la anterior -->
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <a class="page-link px-2 px-sm-3" (click)="goOneBack()" tabindex="-1"
+            [attr.aria-disabled]="currentPage === 1">
+            <i class="bi bi-chevron-left"></i>
+          </a>
+        </li>
+
+        <!-- Página actual -->
+        <li class="page-item disabled">
+          <span class="page-link">{{ currentPage }}</span>
+        </li>
+
+        <!-- Ir a la siguiente -->
+        <li class="page-item">
+          <a class="page-link px-2 px-sm-3" (click)="goOneForward()">
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+

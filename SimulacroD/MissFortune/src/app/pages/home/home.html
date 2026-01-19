@@ -1,0 +1,69 @@
+<section class="bg-dark min-vh-100">
+  <div class="container py-5">
+
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h1 class="text-primary fw-bold">Panel principal</h1>
+      <p class="text-muted">
+        Bienvenido a la aplicación
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-4">
+
+      <!-- Productos -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title text-primary fw-semibold">
+              Productos
+            </h5>
+            <p class="card-text text-muted">
+              Gestión del catálogo de productos
+            </p>
+            <a routerLink="/products" class="btn btn-primary w-100">
+              Ver productos
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Usuarios -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title text-primary fw-semibold">
+              Usuarios
+            </h5>
+            <p class="card-text text-muted">
+              Administración de usuarios del sistema
+            </p>
+            <a routerLink="/users" class="btn btn-primary w-100">
+              Ver usuarios
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cerrar sesión -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title text-danger fw-semibold">
+              Sesión
+            </h5>
+            <p class="card-text text-muted">
+              Cerrar la sesión actual
+            </p>
+             <button class="btn btn-outline-danger" (click)="logout()">
+              Cerrar sesión
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<section>
+    <div class="card mb-3 p-2 bg-secondary bg-opacity-25">
+        <div class="d-flex justify-content-center mb-2 mt-3">
+            <img [src]="miProducto.images" [alt]="miProducto.title" class="img-fluid rounded-circle border border-4 border-dark w-75"/>
+        </div>
+
+        <div class="col-md-12 d-flex justify-content-center mb-4">
+            <h5 class="card-title"> <b>{{miProducto.title}}</b></h5>
+            
+            <p>{{miProducto.raiting}}</p>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center mb-4">
+            <p>{{miProducto.price}}€</p>
+        </div>
+        <div class="col-md-12 d-flex justify-content-center mb-4">
+            <p>{{miProducto.description}}</p>
+        </div>
+    </div>
+</section>

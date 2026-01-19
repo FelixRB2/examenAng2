@@ -1,0 +1,8 @@
+<app-nav-bar></app-nav-bar>
+<div>
+    <p>Usuario: </p>
+    @if (user != null) {
+        <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+        <p>{{ user.email }}</p>
+    }
+</div>

@@ -1,0 +1,17 @@
+<app-nav-bar></app-nav-bar>
+<section class="bg-blue mt-5 mb-3">
+    <br>
+    <div class="hero">
+        <div class="text-center">
+            <h4>Productos</h4>
+        </div>
+    </div>
+</section>
+<hr>
+<div class="row ms-5 me-5">
+    @for(producto of productoArray; track producto.id){
+        <article class=" tarjeta col-8 col-md-4 col-sm-4">
+            <app-product-card [miProducto] = "producto"></app-product-card>
+        </article>
+    }
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+  <div class="col">
+        <img [src]="miUser.image" [alt]="miUser.username" class="rounded-circle">
+  </div>
+
+  <div class="col">
+    <h1>{{miUser.first_name}} {{miUser.last_name}}</h1>
+    <br>
+    <h3 ><strong>Nombre de usuario:</strong> {{miUser.username}}</h3>
+    <br>
+    <h3><strong>Email:</strong> {{miUser.email}}</h3>
+    <br>
+
+    <div class="d-flex justify-content-center gap-1">
+      <button type="button"class="btn btn-outline-danger"(click)="deleteUser(miUser)">
+        Eliminar
+      </button>
+      <button type="button" class="btn btn-outline-warning" [routerLink]="['/formulario', miUser._id]">
+        Actualizar
+      </button>
+      <button type="button" class="btn btn-outline-primary" [routerLink]="['/home']">
+        Volvel al listado
+      </button>
+    </div>
+
+    </div>
+  </div>
+  </div>
+
+

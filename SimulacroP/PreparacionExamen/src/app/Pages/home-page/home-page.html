@@ -1,0 +1,39 @@
+<body>
+
+    <header class="header">
+        <h1>CRM Pro</h1>
+        <p>Gestión de empleados, productos y usuarios en un solo lugar</p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            @if(isToken){
+            <li><a [routerLink]="['/products']">Ver Productos</a></li>
+            }@else{
+            <li><a [routerLink]="['/login']">Log in</a></li>
+            }
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="card">
+            <h2>Gestión de Empleados</h2>
+            <p>Administra la información de tus empleados, roles y rendimiento.</p>
+        </section>
+
+        <section class="card">
+            <h2>Gestión de Productos</h2>
+            <p>Controla tu catálogo de productos, precios y stock fácilmente.</p>
+        </section>
+
+        <section class="card">
+            <h2>Gestión de Usuarios</h2>
+            <p>Gestiona usuarios, permisos y accesos al sistema CRM.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 CRM Pro - PabloRivero</p>
+    </footer>
+
+</body>

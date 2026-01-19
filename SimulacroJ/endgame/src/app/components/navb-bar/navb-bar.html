@@ -1,0 +1,27 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">Endgame</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        @if(isLoggedIn){
+          <li class="nav-item-active">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/products']">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/users']">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn bg-light" routerLinkActive="active" (click)="logout()">Log Out</a>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

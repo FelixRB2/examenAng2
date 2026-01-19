@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row m-5">
+        @for(usuario of arrUSuarios; track usuario._id){
+        <div class="col-md-4 mb-4">
+            <app-user-card [usuario]="usuario" (usuarioEliminado)="onUsuarioEliminado($event)">
+            </app-user-card>
+        </div>
+        }
+    </div>
+
+
+    <!-- Controles de paginación -->
+    <div class="row m-5">
+        <div class="col-12">
+
+            <div class="d-flex justify-content-center mb-3">
+                <span class="me-3 align-self-center">
+                    Página {{ paginaActual }} de {{ totalPaginas }}                    
+                </span>
+            </div>
+            <nav aria-label="Paginación de usuarios">
+                <ul class="pagination pagination-lg justify-content-center flex-wrap">
+
+                    <!-- primera página -->
+                    <li class="page-item" [class.disabled]="paginaActual === 1">
+                        <a class="page-link" (click)="irAPagina(1)" tabindex="-1"
+                            [attr.aria-disabled]="paginaActual === 1">
+                            <i class="bi bi-chevron-double-left"></i>
+                            <span class="d-none d-md-inline ms-1">Primera</span>
+                        </a>
+                    </li>
+
+                    <!-- n Anterior -->
+                    <li class="page-item" [class.disabled]="paginaActual === 1">
+                        <a class="page-link" (click)="paginaAnterior()" tabindex="-1"
+                            [attr.aria-disabled]="paginaActual === 1">
+                            <i class="bi bi-chevron-left"></i>
+                            <span class="d-none d-sm-inline ms-1">Anterior</span>
+                        </a>
+                    </li>
+
+                    <!-- Siguiente -->
+                    <li class="page-item" [class.disabled]="paginaActual === totalPaginas">
+                        <a class="page-link" (click)="paginaSiguiente()" tabindex="-1"
+                            [attr.aria-disabled]="paginaActual === totalPaginas">
+                            <span class="d-none d-sm-inline me-1">Siguiente</span>
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+                    </li>
+
+                    <!-- ultima pagina -->
+                    <li class="page-item" [class.disabled]="paginaActual === totalPaginas">
+                        <a class="page-link" (click)="irAPagina(totalPaginas)" tabindex="-1"
+                            [attr.aria-disabled]="paginaActual === totalPaginas">
+                            <span class="d-none d-md-inline me-1">Última</span>
+                            <i class="bi bi-chevron-double-right"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

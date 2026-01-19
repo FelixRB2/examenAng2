@@ -1,0 +1,55 @@
+<section class="container">
+  @if(isNew){
+  <h1>Insertar nuevo usuario</h1>
+  }@else {
+  <h1>Actualizar usuario</h1>
+  }
+
+  <hr>
+
+   <form [formGroup]="userForm" class="card p-3 shadow bg-secondary" (ngSubmit)="getDataForm()">
+        <div class="my-2">
+            <label for="first_name" class="form-label mt-lg-3">Nombre</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Introduce el nombre"
+                formControlName="first_name">
+        </div>
+
+        <div class="my-2">
+            <label for="last_name" class="form-label mt-lg-3">Apellidos</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Introduce los apellidos"
+                formControlName="last_name">
+        </div>
+
+        <div class="my-2">
+            <label for="username" class="form-label mt-lg-3">Nombre de Usuario</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Introduce el nombre de usuario"
+                formControlName="username">
+        </div>
+
+        <div class="my-2">
+            <label for="email" class="form-label mt-lg-3">Email</label>
+            <input type="text" class="form-control" name="email" id="email"
+                placeholder="Introduce las fechas de emision" formControlName="email" placeholder="Introduce el correo electronico">
+        </div>
+
+        <div class="my-2">
+            <label for="image" class="form-label mt-lg-3">Imagen</label>
+            <input type="text" class="form-control" name="image" id="image" placeholder="Introduce el link de la imagen"
+                formControlName="image">
+        </div>
+
+        <div class="my-2">
+            <label for="password" class="form-label mt-lg-3">Contraseña</label>
+            <input type="password" class="form-control" name="password" id="password"
+                placeholder="Introduce la contraseña" formControlName="password">
+        </div>
+
+        <div class="d-flex ms-auto gap-2">
+            <input type="submit" value="Guardar" class="btn btn-success mt-5" [disabled]="!userForm.valid && isNew">
+            <button class="btn btn-warning mt-5" [routerLink]="['/home']">Volver</button>
+        </div>
+    </form>
+
+
+
+</section>

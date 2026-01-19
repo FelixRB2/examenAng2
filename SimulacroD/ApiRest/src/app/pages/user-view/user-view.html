@@ -1,0 +1,30 @@
+<section class="container mt-5">
+  <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+    <div class="row g-0 align-items-center">
+      <div class="col-md-4 d-flex justify-content-center p-3">
+        <img [src]="usuario.image" [alt]="" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+      </div>
+
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title fw-bold mb-2">
+            {{ usuario.first_name }} {{ usuario.last_name }}
+          </h4>
+
+          <p class="card-text mb-1">
+            <strong>Username:</strong> {{ usuario.username }}
+          </p>
+          <p class="card-text mb-2">
+            <strong>Email:</strong> 
+            <a [href]="'mailto:' + usuario.email" class="text-decoration-none">
+              {{ usuario.email }}
+            </a>
+          </p>
+
+          <small class="text-muted">ID: {{ usuario.id }}</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

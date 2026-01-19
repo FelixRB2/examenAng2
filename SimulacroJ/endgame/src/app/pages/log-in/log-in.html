@@ -1,0 +1,21 @@
+<section class="bg-secondary vh-100">
+  <div class="container pt-5">
+    <div class="card p-3 bg-white">
+      <h3 class="text-center">Login EndGame</h3>
+      <hr>
+      <form #loginForm="ngForm" (ngSubmit)="getLogInInfo(loginForm)">
+        <div>
+          <label for="email" class="form-label">Email</label>
+          <input type="text" id="email" class="form-control" name="email" ngModel>
+        </div>
+        <div>
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" name="password" ngModel>
+        </div>
+        <div class="text-center mt-3">
+          <input type="submit" value="Log In" class="btn btn-light mt-5">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

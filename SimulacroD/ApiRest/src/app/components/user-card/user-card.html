@@ -1,0 +1,21 @@
+<div class="container my-4">
+    <div class="card shadow-sm h-100">
+        <div class="card-body">
+            <img [src]="usuario.image" class="card-img-top mb-3 rounded-circle mx-auto d-block" alt="Imagen de {{usuario.first_name}}" style="width: 150px; height: 150px; object-fit: cover;">
+            <h5 class="card-title">{{usuario.first_name}} {{usuario.last_name}}</h5>
+            <p class="card-text">
+                        <strong>Email: </strong> 
+                        <a [href]="'mailto:' + usuario.email">{{ usuario.email }}</a>
+                    </p>
+            <div class="d-flex justify-content-around mt-4">
+                <a [routerLink]="['/usuarios', usuario._id]"><i class="bi bi-search" style="font-size: 1.8rem;"></i></a>
+                <a [routerLink]="['/formulario', usuario._id]"><i class="bi bi-arrow-clockwise" style="font-size: 2rem; color:rgb(253, 215, 1)"></i></a>
+                @if (auth.isAdmin()) {
+                <a (click)="eliminarUsuario(usuario)" style="cursor: pointer;">
+                    <i class="bi bi-trash" style="font-size: 2rem; color: rgb(255, 0, 0);"></i>
+                </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+
+<h1>Lista de Usuarios</h1>
+
+  <div class="row row-cols-3 g-3">
+@for (user of usersArray; track user._id) {
+  <div class="col">
+    <app-user-card [miUser]="user" (eliminar)="deleteUser($event)"></app-user-card>
+  </div>
+}@empty {
+  <h1>No hay Usuarios</h1>
+}
+</div>
+
+<!-- Paginación -->
+<div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+  <button
+    class="btn btn-primary"
+    (click)="previousPage()"
+    [disabled]="currentPage === 1">
+    Anterior
+  </button>
+
+  <span class="badge bg-secondary fs-5 px-3 py-2">
+    Página {{ currentPage }} de {{ totalPages }}
+  </span>
+
+  <button
+    class="btn btn-primary"
+    (click)="nextPage()"
+    [disabled]="currentPage === totalPages">
+    Siguiente
+  </button>
+</div>

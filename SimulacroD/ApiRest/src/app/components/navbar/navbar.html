@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+
+    <!-- Brand -->
+    <a class="navbar-brand" [routerLink]="['/']">FerroAtlántica</a>
+
+    <!-- Toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        @if (isLoggedIn) {
+
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">
+              Inicio
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/usuarios']">
+              Ver Empleados
+            </a>
+          </li>
+          @if (auth.isAdmin()) {
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/formulario']">
+              Nuevo Empleado
+            </a>
+          </li>
+          }
+
+          <!-- Usuario -->
+          <li class="nav-item me-3 d-flex align-items-center">
+            <span class="navbar-text text-light">
+              Usuario: <strong>{{ Username }}</strong>
+            </span>
+          </li>
+
+          <!-- Logout -->
+          <li class="nav-item">
+            <button class="btn btn-light" (click)="logout()">
+              Log Out
+            </button>
+          </li>
+
+        }
+
+      </ul>
+    </div>
+  </div>
+</nav>

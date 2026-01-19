@@ -1,0 +1,14 @@
+
+        .error-404 {
+            font-weight: 700;
+            font-size: clamp(3rem, 8vw, 8rem);
+            line-height: 1;
+            color: #58d6ec;
+        }
+        .card-rounded {
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(13,110,253,0.08);
+        }
+        .muted {
+            color: #6c757d;
+        }
