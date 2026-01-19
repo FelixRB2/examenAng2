@@ -1,0 +1,120 @@
+Buena pregunta, esto es **un clásico** y conviene hacerlo bien desde el principio 👍
+Hay **dos casos distintos** y mucha gente los mezcla. Te los explico claro y sin magia.
+
+---
+
+## ✅ Caso correcto (el que quieres casi siempre)
+
+**El footer se queda abajo de la página**,
+pero **solo se pega al fondo cuando el contenido es corto**.
+Si hay mucho contenido → baja con el scroll.
+👉 **NO usar `position: fixed`**
+
+### ✔️ Solución recomendada: **Flexbox**
+
+Es la forma moderna y correcta.
+
+### HTML
+
+```html
+<body>
+  <header>Header</header>
+
+  <main>
+    Contenido de la página
+  </main>
+
+  <footer>
+    Footer
+  </footer>
+</body>
+```
+
+### CSS
+
+```css
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background: #222;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+```
+
+🔑 **La clave**
+
+* `body` ocupa toda la altura
+* `main { flex: 1 }` empuja el footer hacia abajo
+* Nunca queda flotando en mitad de la pantalla
+
+👉 **Este es el patrón correcto para webs normales**
+
+---
+
+## ❌ Lo que NO debes hacer (salvo casos especiales)
+
+```css
+footer {
+  position: fixed;
+  bottom: 0;
+}
+```
+
+### ¿Por qué está mal?
+
+* Se queda flotando encima del contenido
+* Tapa texto
+* En páginas cortas parece “raro”
+* En páginas largas molesta
+
+👉 Solo vale para **barras persistentes** (cookies, chat, reproductor)
+
+---
+
+## 🧠 Alternativa moderna (Grid)
+
+Si te gusta CSS Grid:
+
+```css
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+```
+
+Mismo HTML, mismo resultado.
+
+---
+
+## 🧪 Resumen rápido
+
+| Quieres que…                         | Usa                  |
+| ------------------------------------ | -------------------- |
+| Footer siempre visible flotando      | `position: fixed` ❌  |
+| Footer abajo solo si falta contenido | **Flexbox / Grid** ✅ |
+| No se rompa al cambiar de página     | **Flexbox / Grid** ✅ |
+
+---
+
+Si quieres, dime:
+
+* si estás usando **Bootstrap**
+* si es **Angular / React / PHP**
+* o si es para un **layout concreto**
+
+y te lo adapto exactamente a tu proyecto.
